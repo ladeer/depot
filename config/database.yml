@@ -19,7 +19,11 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: somertondb
   pool: 5
-  timeout: 5000
+  username: somertondb
+  password: polarbear
+  host: mysql.somertononline.com
