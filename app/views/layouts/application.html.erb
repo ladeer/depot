@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fluffy Catalog</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class='<%= controller.controller_name %>'>
+<div id="banner">
+
+	<%= image_tag("logo.jpg") %>
+	<%= @page_title || "Fluffy Catalog" %>
+
+</div>
+
+<div id="columns">
+	<div id="side">
+	
+	<ul>
+		<li><a href="http://www.wsj.com">Home</a></li>
+		<li><a href="*">Questions</a></li>
+		<li><a href="*">News</a></li>
+		<li><a href="*">Contacts</a></li>
+		<%@time = Time.now%>
+		<li>Now is <%=@time.to_formatted_s(:short)%></li>
+	</div>
+	<div id="main">
+		<%= yield %>
+	</div>
+</div>
+
+</body>
+</html>
